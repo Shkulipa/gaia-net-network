@@ -36,7 +36,7 @@ pause = 1
 try:
     driver.get('https://www.gaianet.ai/')
 
-    time.sleep(20)
+    time.sleep(40)
 
     driver.get('https://www.gaianet.ai/chat')
     time.sleep(1)
