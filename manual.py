@@ -13,11 +13,11 @@ import time
 import os
 
 url = "https://www.whatismybrowser.com/detect/what-is-my-user-agent/"
-service = Service('./../chromedriver')
+service = Service('./chromedriver')
 useragent = UserAgent(browsers=['chrome'])
 
 options = Options()
-options.add_extension('./../metamask.crx')
+options.add_extension('./metamask.crx')
 options.add_argument(f"user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36")
 
 # Директория для хранения профиля
@@ -31,7 +31,7 @@ pause = 1
 try:
     driver.get('https://www.gaianet.ai/')
 
-    time.sleep(60)
+    time.sleep(20)
 
     driver.get('https://www.gaianet.ai/chat')
     time.sleep(1)
@@ -60,10 +60,10 @@ try:
             time.sleep(5)
 
             # Ожидание появления тега <p> с текстом "Send"
-            WebDriverWait(driver, 900).until(
+            WebDriverWait(driver, 86400).until(
                 EC.presence_of_element_located((By.XPATH, "//p[text()='Send']"))
             )
-            time.sleep(5)
+            time.sleep(15)
             # Переход к следующей итерации сразу после появления тега "Send"
             continue
 
