@@ -23,6 +23,7 @@ options = Options()
 options.binary_location = chrome_path  # Указываем путь к Chrome
 options.add_extension('./metamask.crx')
 options.add_argument(f"user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36")
+options.add_argument('--no-sandbox')
 
 # Директория для хранения профиля
 profile_directory = os.path.join(os.getcwd(), "chrome_profile")

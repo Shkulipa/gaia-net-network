@@ -14,7 +14,6 @@ https://www.youtube.com/watch?v=NB8OceGZGjA
 chomedrivers: https://sites.google.com/chromium.org/driver/downloads
 
 
-
 по поводу поинтов:
 https://discord.com/channels/1215232680942374912/1277064819949965322/1277671671737614469
 
@@ -24,6 +23,8 @@ https://discord.com/channels/1215232680942374912/1277064819949965322/12776716717
 2) sudo apt install ubuntu-desktop
 3) sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
 4) sudo apt install xrdp xorgxrdp
+5) sudo ufw allow 3389/tcp
+или этот гайд: https://www.digitalocean.com/community/developer-center/how-to-install-ubuntu-desktop-on-a-droplet
 
 - Устанавливаем хром
 1) wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
