@@ -11,11 +11,16 @@ from fake_useragent import UserAgent
 import time
 import os
 
+# Путь к Chrome и chromedriver
+chrome_path = '/usr/bin/google-chrome'
+
 url = "https://www.whatismybrowser.com/detect/what-is-my-user-agent/"
 service = Service('./chromedriver_linux64')
 useragent = UserAgent(browsers=['chrome'])
 
+
 options = Options()
+options.binary_location = chrome_path  # Указываем путь к Chrome
 options.add_extension('./metamask.crx')
 options.add_argument(f"user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36")
 
