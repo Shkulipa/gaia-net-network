@@ -13,11 +13,11 @@ import time
 import os
 
 url = "https://www.whatismybrowser.com/detect/what-is-my-user-agent/"
-service = Service('./chromedriver')
+service = Service('./../chromedriver')
 useragent = UserAgent(browsers=['chrome'])
 
 options = Options()
-options.add_extension('./metamask.crx')
+options.add_extension('./../metamask.crx')
 options.add_argument(f"user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36")
 
 # Директория для хранения профиля
