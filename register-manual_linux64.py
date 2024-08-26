@@ -12,7 +12,7 @@ import time
 import os
 
 url = "https://www.whatismybrowser.com/detect/what-is-my-user-agent/"
-service = Service('./chromedriver')
+service = Service('./chromedriver_linux64')
 useragent = UserAgent(browsers=['chrome'])
 
 options = Options()
