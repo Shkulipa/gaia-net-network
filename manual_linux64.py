@@ -38,14 +38,14 @@ try:
 
     time.sleep(40)
 
-    driver.get('https://www.gaianet.ai/chat')
-    time.sleep(1)
+    driver.get('https://0x07f9258b97b128c12a34d49442582c4bc6858520.us.gaianet.network')
+    time.sleep(10)
 
     # начать новый чат
     xpath = '//button[contains(text(), "New chat")]'
     new_chat_button = driver.find_element(By.XPATH, xpath)
     new_chat_button.click()
-    time.sleep(7)
+    time.sleep(10)
 
     textarea = driver.find_element(By.XPATH, '//textarea')
 

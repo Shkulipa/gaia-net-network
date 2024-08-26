@@ -33,7 +33,7 @@ try:
 
     time.sleep(20)
 
-    driver.get('https://www.gaianet.ai/chat')
+    driver.get('https://0x07f9258b97b128c12a34d49442582c4bc6858520.us.gaianet.network')
     time.sleep(1)
 
     # начать новый чат
