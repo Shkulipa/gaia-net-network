@@ -7,7 +7,6 @@ questions = [
     "How does prototypal inheritance work in JavaScript?",
     "What are promises, and how do you use them?",
     "What is the difference between `==` and `===` in JavaScript?",
-    "How do you handle asynchronous code in JavaScript?",
     "What are arrow functions, and how do they differ from regular functions?",
     "What is a JavaScript module, and how do you create one?",
     "What is the purpose of the `this` keyword in JavaScript?",
