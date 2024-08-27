@@ -62,7 +62,7 @@ try:
     while True:
         for question in questions:
             textarea.send_keys(question + Keys.ENTER)
-            time.sleep(5)
+            time.sleep(10)
 
             # Ожидание появления тега <p> с текстом "Send"
             WebDriverWait(driver, 86400).until(
