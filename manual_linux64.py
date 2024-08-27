@@ -31,12 +31,15 @@ options.add_argument(f"user-data-dir={profile_directory}")
 
 driver = webdriver.Chrome(service=service, options=options)
 
-pause = 1
+def refresh_page():
+    print("Обновление страницы...")
+    driver.refresh()
+    time.sleep(15)  # Дайте странице время для полной загрузки
 
 try:
-    driver.get('https://www.gaianet.ai/')
+    driver.get('https://www.gaianet.ai/agents')
 
-    time.sleep(40)
+    time.sleep(20)
 
     driver.get('https://0x07f9258b97b128c12a34d49442582c4bc6858520.us.gaianet.network')
     time.sleep(10)
@@ -45,32 +48,25 @@ try:
     xpath = '//button[contains(text(), "New chat")]'
     new_chat_button = driver.find_element(By.XPATH, xpath)
     new_chat_button.click()
-    time.sleep(10)
-
-    textarea = driver.find_element(By.XPATH, '//textarea')
-
-    # Выбираем случайный вопрос из списка
-    random_question = random.choice(questions)
-
-    # Отправляем случайный вопрос
-    textarea.send_keys(random_question + Keys.ENTER)
     time.sleep(15)
-
-    textarea = driver.find_element(By.XPATH, '//textarea')
 
     # Бесконечный цикл для отправки вопросов по кругу
     while True:
         for question in questions:
+           # Обязательно перезапрашиваем текстовое поле перед каждой отправкой вопроса
+            textarea = driver.find_element(By.XPATH, '//textarea')
             textarea.send_keys(question + Keys.ENTER)
             time.sleep(10)
 
-            # Ожидание появления тега <p> с текстом "Send"
-            WebDriverWait(driver, 86400).until(
-                EC.presence_of_element_located((By.XPATH, "//p[text()='Send']"))
-            )
-            time.sleep(15)
-            # Переход к следующей итерации сразу после появления тега "Send"
-            continue
+            try:
+                WebDriverWait(driver, 120).until(
+                    EC.presence_of_element_located((By.XPATH, "//p[text()='Send']"))
+                )
+                time.sleep(15)
+            except Exception as e:
+                print(f"Ошибка при ожидании элемента: {e}")
+                refresh_page()
+                continue
 
         time.sleep(5)  # Ожидание перед началом нового круга вопросов
 except Exception as ex:
