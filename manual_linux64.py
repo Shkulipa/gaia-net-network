@@ -59,7 +59,7 @@ try:
             time.sleep(10)
 
             try:
-                WebDriverWait(driver, 120).until(
+                WebDriverWait(driver, 600).until(
                     EC.presence_of_element_located((By.XPATH, "//p[text()='Send']"))
                 )
                 time.sleep(15)
