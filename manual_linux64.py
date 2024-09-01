@@ -39,7 +39,7 @@ def refresh_page():
 try:
     driver.get('https://www.gaianet.ai/agents')
 
-    time.sleep(40)
+    time.sleep(60)
 
     driver.get('https://0x07f9258b97b128c12a34d49442582c4bc6858520.us.gaianet.network')
     time.sleep(10)
